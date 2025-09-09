@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Screen Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Real-Time Screen Sharing</h1>
+
+    <div id="host-controls">
+        <h2>Host</h2>
+        <button id="create-session-btn">Create Session</button>
+        <div id="session-info" class="hidden">
+            <p>Session ID: <span id="session-id"></span></p>
+            <p>Host Token: <span id="host-token"></span></p>
+            <button id="start-share-btn">Start Sharing</button>
+            <button id="stop-share-btn" class="hidden">Stop Sharing</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="viewer-controls">
+        <h2>Viewer</h2>
+        <input type="text" id="join-session-id" placeholder="Enter Session ID">
+        <button id="join-session-btn">Join Session</button>
+    </div>
+
+    <div id="sharing-container">
+        <video id="screen-video" autoplay playsinline></video>
+        <p id="status"></p>
+    </div>
+
+    <script src="/host.js"></script>
+    <script src="/viewer.js"></script>
+</body>
+</html>
